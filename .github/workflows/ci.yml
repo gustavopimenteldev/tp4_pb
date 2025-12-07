@@ -45,10 +45,10 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build, test and coverage (headless)
+      - name: Build and test (headless)
         env:
           HEADLESS: "true"
-        run: ./gradlew clean test jacocoTestReport -Dheadless=true
+        run: ./gradlew clean build
 
       - name: Upload test reports
         if: always()
