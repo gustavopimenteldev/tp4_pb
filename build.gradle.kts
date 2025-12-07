@@ -36,11 +36,12 @@ publishing {
     }
 }
 
-jacocoTestReport {
-    dependsOn test
+tasks.named<JacocoReport>("jacocoTestReport") {
+    dependsOn(tasks.test)
+
     reports {
-        xml.required = true
-        html.required = true
+        xml.required.set(true)
+        html.required.set(true)
     }
 }
 
@@ -54,19 +55,19 @@ tasks.withType<Javadoc> {
 
 tasks.test {
     useJUnitPlatform()
-    exclude '**/*SeleniumTest.class'
+    exclude("**/*SeleniumTest.class")
     testLogging {
         events("PASSED", "FAILED", "SKIPPED")
     }
 }
 
-tasks.register('seleniumTest', Test) {
-    description = 'Runs Selenium UI tests (browser end-to-end)'
-    group = 'verification'
+tasks.register<Test>("seleniumTest") {
+    description = "Runs Selenium UI tests (browser end-to-end)"
+    group = "verification"
 
     useJUnitPlatform()
 
-    include '**/*SeleniumTest.class'
+    include("**/*SeleniumTest.class")
 
-    systemProperty 'headless', System.getProperty('headless', 'true')
+    systemProperty("headless", System.getProperty("headless") ?: "true")
 }
