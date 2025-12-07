@@ -1,62 +1,56 @@
 name: CI - Build, Test and Coverage
 
 on:
-    push:
-        branches:
-            - main
-            - develop
-    pull_request:
-        branches:
-            - main
-            - develop
-    workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
 
 jobs:
-    build-and-test:
-        runs-on: ubuntu-latest
+  build-and-test:
+    runs-on: ubuntu-latest
 
-        steps:
-            # 1) Checkout do código
-            - name: Checkout repository
-              uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-            # 2) Configuração do Java (ajusta a versão pro seu projeto)
-            - name: Setup Java
-              uses: actions/setup-java@v4
-              with:
-                  distribution: temurin
-                  java-version: "21"
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
 
-            # 3) Cache do Gradle para acelerar builds
-            - name: Setup Gradle
-              uses: gradle/actions/setup-gradle@v4
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
 
-            # INSTALA CHROME + CHROMEDRIVER
-            - name: Setup Chrome
-              uses: browser-actions/setup-chrome@v2
-              with:
-                  chrome-version: stable
-                  install-chromedriver: true
-                  install-dependencies: true
+      # Chrome + chromedriver
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: stable
+          install-chromedriver: true
+          install-dependencies: true
 
-            # INSTALA FIREFOX (para o teste com EnumSource)
-            - name: Setup Firefox
-              uses: browser-actions/setup-firefox@v1
-              with:
-                  firefox-version: latest
+      # Firefox
+      - name: Setup Firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: latest
 
-            # 4) Dar permissão de execução pro wrapper (garante no Linux)
-            - name: Grant execute permission for gradlew
-              run: chmod +x gradlew
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
-            # 5) Build + testes (ajuste a task se for diferente)
-            - name: Build, test and coverage (headless)
-              run: ./gradlew clean build jacocoTestReport -Dheadless=true
+      - name: Build, test and coverage (headless)
+        run: ./gradlew clean test jacocoTestReport -Dheadless=true
 
-            # 7)vPublicar relatório de testes como artifact
-            - name: Upload test reports
-              if: always()
-              uses: actions/upload-artifact@v4
-              with:
-                  name: test-reports
-                  path: build/reports/tests/test
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: build/reports/tests/test
