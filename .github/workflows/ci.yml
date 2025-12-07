@@ -46,6 +46,8 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build, test and coverage (headless)
+        env:
+          HEADLESS: "true"
         run: ./gradlew clean test jacocoTestReport -Dheadless=true
 
       - name: Upload test reports
