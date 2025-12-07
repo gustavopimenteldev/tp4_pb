@@ -29,8 +29,7 @@ jobs:
 
             # 3) Cache do Gradle para acelerar builds
             - name: Setup Gradle
-              uses:
-                  gradle/actions/setup-gradle@v4
+              uses: gradle/actions/setup-gradle@v4
 
             # INSTALA CHROME + CHROMEDRIVER
             - name: Setup Chrome
@@ -51,12 +50,8 @@ jobs:
               run: chmod +x gradlew
 
             # 5) Build + testes (ajuste a task se for diferente)
-            - name: Build and test
-              run: ./gradlew clean build test
-
-            # 6) Geração de relatório de cobertura, se você já tiver JaCoCo configurado
-            - name: Run tests with coverage
-              run: ./gradlew test jacocoTestReport
+            - name: Build, test and coverage (headless)
+              run: ./gradlew clean build jacocoTestReport -Dheadless=true
 
             # 7)vPublicar relatório de testes como artifact
             - name: Upload test reports
