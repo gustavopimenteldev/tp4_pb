@@ -46,9 +46,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build and test (headless)
-        env:
-          HEADLESS: "true"
-        run: ./gradlew clean build
+        run: ./gradlew clean build -Dheadless=true
 
       - name: Upload test reports
         if: always()

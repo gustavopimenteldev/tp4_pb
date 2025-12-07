@@ -36,6 +36,14 @@ publishing {
     }
 }
 
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
@@ -46,7 +54,19 @@ tasks.withType<Javadoc> {
 
 tasks.test {
     useJUnitPlatform()
+    exclude '**/*SeleniumTest.class'
     testLogging {
         events("PASSED", "FAILED", "SKIPPED")
     }
+}
+
+tasks.register('seleniumTest', Test) {
+    description = 'Runs Selenium UI tests (browser end-to-end)'
+    group = 'verification'
+
+    useJUnitPlatform()
+
+    include '**/*SeleniumTest.class'
+
+    systemProperty 'headless', System.getProperty('headless', 'true')
 }
