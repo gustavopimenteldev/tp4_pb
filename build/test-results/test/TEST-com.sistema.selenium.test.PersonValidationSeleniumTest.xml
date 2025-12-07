@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sistema.selenium.test.PersonValidationSeleniumTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-12-07T01:23:21.584Z" hostname="MAQUINA" time="21.389">
+  <properties/>
+  <testcase name="Should show validation errors for empty fields" classname="com.sistema.selenium.test.PersonValidationSeleniumTest" time="1.566"/>
+  <testcase name="Should validate boundary age values" classname="com.sistema.selenium.test.PersonValidationSeleniumTest" time="2.77"/>
+  <testcase name="[1] invalid-email" classname="com.sistema.selenium.test.PersonValidationSeleniumTest" time="1.67"/>
+  <testcase name="[2] test@" classname="com.sistema.selenium.test.PersonValidationSeleniumTest" time="1.712"/>
+  <testcase name="[3] @domain.com" classname="com.sistema.selenium.test.PersonValidationSeleniumTest" time="1.68"/>
+  <testcase name="[4] test.domain" classname="com.sistema.selenium.test.PersonValidationSeleniumTest" time="1.752"/>
+  <testcase name="[1] -1" classname="com.sistema.selenium.test.PersonValidationSeleniumTest" time="1.705"/>
+  <testcase name="[2] 151" classname="com.sistema.selenium.test.PersonValidationSeleniumTest" time="1.754"/>
+  <testcase name="[3] 200" classname="com.sistema.selenium.test.PersonValidationSeleniumTest" time="1.778"/>
+  <testcase name="Should show error when creating duplicate person" classname="com.sistema.selenium.test.PersonValidationSeleniumTest" time="2.537"/>
+  <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-06T22:23:21.252-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Starting PersonValidationSeleniumTest using Java 21.0.2 with PID 15932 (started by gusta in C:\Users\gusta\Desktop\codigo_tp4)
+2025-12-06T22:23:21.253-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : The following 1 profile is active: "test"
+2025-12-06T22:23:21.457-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-06T22:23:21.460-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-06T22:23:21.461-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-06T22:23:21.509-03:00  INFO 15932 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-06T22:23:21.509-03:00  INFO 15932 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 254 ms
+2025-12-06T22:23:21.533-03:00  INFO 15932 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-06T22:23:21.581-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 6126 (http) with context path ''
+2025-12-06T22:23:21.582-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Started PersonValidationSeleniumTest in 0.357 seconds (process running for 54.75)
+2025-12-06T22:23:21.594-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-12-06T22:23:21.601-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\gusta\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-12-06T22:23:22.299-03:00  WARN 15932 --- [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 142
+2025-12-06T22:23:22.299-03:00  WARN 15932 --- [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 142.0.7444.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-12-06T22:23:22.319-03:00  INFO 15932 --- [o-auto-6-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06T22:23:22.319-03:00  INFO 15932 --- [o-auto-6-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-06T22:23:22.319-03:00  INFO 15932 --- [o-auto-6-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-06T22:23:23.181-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Starting PersonValidationSeleniumTest using Java 21.0.2 with PID 15932 (started by gusta in C:\Users\gusta\Desktop\codigo_tp4)
+2025-12-06T22:23:23.181-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : The following 1 profile is active: "test"
+2025-12-06T22:23:23.312-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-06T22:23:23.313-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-06T22:23:23.313-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-06T22:23:23.354-03:00  INFO 15932 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-06T22:23:23.354-03:00  INFO 15932 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 171 ms
+2025-12-06T22:23:23.372-03:00  INFO 15932 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-06T22:23:23.423-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 54330 (http) with context path ''
+2025-12-06T22:23:23.425-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Started PersonValidationSeleniumTest in 0.273 seconds (process running for 56.591)
+2025-12-06T22:23:23.436-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-12-06T22:23:23.442-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\gusta\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-12-06T22:23:24.183-03:00  WARN 15932 --- [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 142
+2025-12-06T22:23:24.183-03:00  WARN 15932 --- [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 142.0.7444.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-12-06T22:23:24.204-03:00  INFO 15932 --- [o-auto-7-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06T22:23:24.204-03:00  INFO 15932 --- [o-auto-7-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-06T22:23:24.205-03:00  INFO 15932 --- [o-auto-7-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-06T22:23:26.219-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Starting PersonValidationSeleniumTest using Java 21.0.2 with PID 15932 (started by gusta in C:\Users\gusta\Desktop\codigo_tp4)
+2025-12-06T22:23:26.220-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : The following 1 profile is active: "test"
+2025-12-06T22:23:26.389-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-06T22:23:26.389-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-06T22:23:26.390-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-06T22:23:26.431-03:00  INFO 15932 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-06T22:23:26.431-03:00  INFO 15932 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 209 ms
+2025-12-06T22:23:26.453-03:00  INFO 15932 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-06T22:23:26.505-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 51988 (http) with context path ''
+2025-12-06T22:23:26.506-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Started PersonValidationSeleniumTest in 0.306 seconds (process running for 59.673)
+2025-12-06T22:23:26.519-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-12-06T22:23:26.526-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\gusta\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-12-06T22:23:27.217-03:00  WARN 15932 --- [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 142
+2025-12-06T22:23:27.218-03:00  WARN 15932 --- [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 142.0.7444.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-12-06T22:23:27.237-03:00  INFO 15932 --- [o-auto-8-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06T22:23:27.237-03:00  INFO 15932 --- [o-auto-8-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-06T22:23:27.238-03:00  INFO 15932 --- [o-auto-8-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-06T22:23:28.200-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Starting PersonValidationSeleniumTest using Java 21.0.2 with PID 15932 (started by gusta in C:\Users\gusta\Desktop\codigo_tp4)
+2025-12-06T22:23:28.201-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : The following 1 profile is active: "test"
+2025-12-06T22:23:28.328-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-06T22:23:28.329-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-06T22:23:28.329-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-06T22:23:28.369-03:00  INFO 15932 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-06T22:23:28.369-03:00  INFO 15932 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 167 ms
+2025-12-06T22:23:28.410-03:00  INFO 15932 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-06T22:23:28.458-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 14114 (http) with context path ''
+2025-12-06T22:23:28.461-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Started PersonValidationSeleniumTest in 0.281 seconds (process running for 61.627)
+2025-12-06T22:23:28.472-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-12-06T22:23:28.478-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\gusta\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-12-06T22:23:29.172-03:00  WARN 15932 --- [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 142
+2025-12-06T22:23:29.172-03:00  WARN 15932 --- [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 142.0.7444.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-12-06T22:23:29.191-03:00  INFO 15932 --- [o-auto-9-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06T22:23:29.191-03:00  INFO 15932 --- [o-auto-9-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-06T22:23:29.192-03:00  INFO 15932 --- [o-auto-9-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-06T22:23:30.197-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Starting PersonValidationSeleniumTest using Java 21.0.2 with PID 15932 (started by gusta in C:\Users\gusta\Desktop\codigo_tp4)
+2025-12-06T22:23:30.198-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : The following 1 profile is active: "test"
+2025-12-06T22:23:30.325-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-06T22:23:30.326-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-06T22:23:30.326-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-06T22:23:30.363-03:00  INFO 15932 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-06T22:23:30.363-03:00  INFO 15932 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 163 ms
+2025-12-06T22:23:30.382-03:00  INFO 15932 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-06T22:23:30.424-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 30012 (http) with context path ''
+2025-12-06T22:23:30.426-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Started PersonValidationSeleniumTest in 0.25 seconds (process running for 63.593)
+2025-12-06T22:23:30.438-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-12-06T22:23:30.444-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\gusta\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-12-06T22:23:31.124-03:00  WARN 15932 --- [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 142
+2025-12-06T22:23:31.124-03:00  WARN 15932 --- [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 142.0.7444.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-12-06T22:23:31.145-03:00  INFO 15932 --- [-auto-10-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06T22:23:31.146-03:00  INFO 15932 --- [-auto-10-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-06T22:23:31.146-03:00  INFO 15932 --- [-auto-10-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-06T22:23:32.129-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Starting PersonValidationSeleniumTest using Java 21.0.2 with PID 15932 (started by gusta in C:\Users\gusta\Desktop\codigo_tp4)
+2025-12-06T22:23:32.129-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : The following 1 profile is active: "test"
+2025-12-06T22:23:32.256-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-06T22:23:32.257-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-06T22:23:32.257-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-06T22:23:32.299-03:00  INFO 15932 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-06T22:23:32.299-03:00  INFO 15932 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 167 ms
+2025-12-06T22:23:32.338-03:00  INFO 15932 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-06T22:23:32.383-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 58765 (http) with context path ''
+2025-12-06T22:23:32.385-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Started PersonValidationSeleniumTest in 0.276 seconds (process running for 65.551)
+2025-12-06T22:23:32.395-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-12-06T22:23:32.401-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\gusta\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-12-06T22:23:33.134-03:00  WARN 15932 --- [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 142
+2025-12-06T22:23:33.134-03:00  WARN 15932 --- [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 142.0.7444.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-12-06T22:23:33.153-03:00  INFO 15932 --- [-auto-11-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06T22:23:33.154-03:00  INFO 15932 --- [-auto-11-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-06T22:23:33.154-03:00  INFO 15932 --- [-auto-11-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-06T22:23:34.157-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Starting PersonValidationSeleniumTest using Java 21.0.2 with PID 15932 (started by gusta in C:\Users\gusta\Desktop\codigo_tp4)
+2025-12-06T22:23:34.159-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : The following 1 profile is active: "test"
+2025-12-06T22:23:34.300-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-06T22:23:34.301-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-06T22:23:34.301-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-06T22:23:34.349-03:00  INFO 15932 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-06T22:23:34.349-03:00  INFO 15932 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 188 ms
+2025-12-06T22:23:34.373-03:00  INFO 15932 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-06T22:23:34.425-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 61647 (http) with context path ''
+2025-12-06T22:23:34.426-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Started PersonValidationSeleniumTest in 0.287 seconds (process running for 67.592)
+2025-12-06T22:23:34.436-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-12-06T22:23:34.442-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\gusta\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-12-06T22:23:35.130-03:00  WARN 15932 --- [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 142
+2025-12-06T22:23:35.130-03:00  WARN 15932 --- [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 142.0.7444.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-12-06T22:23:35.150-03:00  INFO 15932 --- [-auto-12-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06T22:23:35.150-03:00  INFO 15932 --- [-auto-12-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-06T22:23:35.151-03:00  INFO 15932 --- [-auto-12-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-06T22:23:36.152-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Starting PersonValidationSeleniumTest using Java 21.0.2 with PID 15932 (started by gusta in C:\Users\gusta\Desktop\codigo_tp4)
+2025-12-06T22:23:36.152-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : The following 1 profile is active: "test"
+2025-12-06T22:23:36.268-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-06T22:23:36.269-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-06T22:23:36.269-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-06T22:23:36.312-03:00  INFO 15932 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-06T22:23:36.312-03:00  INFO 15932 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 158 ms
+2025-12-06T22:23:36.350-03:00  INFO 15932 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-06T22:23:36.393-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 19590 (http) with context path ''
+2025-12-06T22:23:36.395-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Started PersonValidationSeleniumTest in 0.261 seconds (process running for 69.561)
+2025-12-06T22:23:36.406-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-12-06T22:23:36.413-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\gusta\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-12-06T22:23:37.178-03:00  WARN 15932 --- [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 142
+2025-12-06T22:23:37.178-03:00  WARN 15932 --- [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 142.0.7444.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-12-06T22:23:37.199-03:00  INFO 15932 --- [-auto-13-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06T22:23:37.199-03:00  INFO 15932 --- [-auto-13-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-06T22:23:37.200-03:00  INFO 15932 --- [-auto-13-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-06T22:23:38.171-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Starting PersonValidationSeleniumTest using Java 21.0.2 with PID 15932 (started by gusta in C:\Users\gusta\Desktop\codigo_tp4)
+2025-12-06T22:23:38.171-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : The following 1 profile is active: "test"
+2025-12-06T22:23:38.294-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-06T22:23:38.295-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-06T22:23:38.295-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-06T22:23:38.334-03:00  INFO 15932 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-06T22:23:38.334-03:00  INFO 15932 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 160 ms
+2025-12-06T22:23:38.354-03:00  INFO 15932 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-06T22:23:38.398-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 27219 (http) with context path ''
+2025-12-06T22:23:38.400-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Started PersonValidationSeleniumTest in 0.247 seconds (process running for 71.567)
+2025-12-06T22:23:38.411-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-12-06T22:23:38.417-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\gusta\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-12-06T22:23:39.150-03:00  WARN 15932 --- [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 142
+2025-12-06T22:23:39.150-03:00  WARN 15932 --- [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 142.0.7444.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-12-06T22:23:39.170-03:00  INFO 15932 --- [-auto-14-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06T22:23:39.170-03:00  INFO 15932 --- [-auto-14-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-06T22:23:39.171-03:00  INFO 15932 --- [-auto-14-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-06T22:23:40.200-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Starting PersonValidationSeleniumTest using Java 21.0.2 with PID 15932 (started by gusta in C:\Users\gusta\Desktop\codigo_tp4)
+2025-12-06T22:23:40.200-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : The following 1 profile is active: "test"
+2025-12-06T22:23:40.314-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-06T22:23:40.315-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-06T22:23:40.315-03:00  INFO 15932 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-06T22:23:40.353-03:00  INFO 15932 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-06T22:23:40.354-03:00  INFO 15932 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 152 ms
+2025-12-06T22:23:40.394-03:00  INFO 15932 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-06T22:23:40.433-03:00  INFO 15932 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 54987 (http) with context path ''
+2025-12-06T22:23:40.435-03:00  INFO 15932 --- [    Test worker] c.s.s.test.PersonValidationSeleniumTest  : Started PersonValidationSeleniumTest in 0.253 seconds (process running for 73.602)
+2025-12-06T22:23:40.445-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-12-06T22:23:40.451-03:00  INFO 15932 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\gusta\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-12-06T22:23:41.252-03:00  WARN 15932 --- [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 142
+2025-12-06T22:23:41.253-03:00  WARN 15932 --- [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 142.0.7444.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-12-06T22:23:41.275-03:00  INFO 15932 --- [-auto-15-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06T22:23:41.275-03:00  INFO 15932 --- [-auto-15-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-06T22:23:41.275-03:00  INFO 15932 --- [-auto-15-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${isEdit} ? 'Edit Person' : 'Add Person'">
+      Person Form
+    </title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" th:href="@{/persons}">Person Management</a>
+        <div class="navbar-nav">
+          <a class="nav-link" th:href="@{/persons}">List Persons</a>
+          <a class="nav-link" th:href="@{/persons/new}">Add Person</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div
+        th:if="${error}"
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+      >
+        <span th:text="${error.message()}"></span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+        ></button>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h2
+                th:text="${isEdit} ? 'Edit Person' : 'Add New Person'"
+                id="form-title"
+              >
+                Person Form
+              </h2>
+            </div>
+            <div class="card-body">
+              <form
+                th:object="${person}"
+                th:action="${isEdit} ? @{/persons/update} : @{/persons}"
+                method="post"
+                id="person-form"
+              >
+                <div class="mb-3">
+                  <label for="id" class="form-label">ID</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    th:field="*{id}"
+                    id="id"
+                    th:readonly="${isEdit}"
+                  />
+                  <div
+                    th:if="${#fields.hasErrors('id')}"
+                    class="text-danger"
+                    th:errors="*{id}"
+                    id="id-error"
+                  ></div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    th:field="*{name}"
+                    id="name"
+                  />
+                  <div
+                    th:if="${#fields.hasErrors('name')}"
+                    class="text-danger"
+                    th:errors="*{name}"
+                    id="name-error"
+                  ></div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    th:field="*{email}"
+                    id="email"
+                  />
+                  <div
+                    th:if="${#fields.hasErrors('email')}"
+                    class="text-danger"
+                    th:errors="*{email}"
+                    id="email-error"
+                  ></div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="age" class="form-label">Age</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    th:field="*{age}"
+                    id="age"
+                  />
+                  <div
+                    th:if="${#fields.hasErrors('age')}"
+                    class="text-danger"
+                    id="age-error"
+                  >
+                    <span>Age must be between 0 and 150</span>
+                    <span
+                      th:each="err : ${#fields.errors('age')}"
+                      th:text="' - ' + ${err}"
+                    ></span>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="submit-btn"
+                    th:text="${isEdit} ? 'Update Person' : 'Create Person'"
+                  >
+                    Submit
+                  </button>
+                  <a
+                    th:href="@{/persons}"
+                    class="btn btn-secondary"
+                    id="cancel-btn"
+                    >Cancel</a
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

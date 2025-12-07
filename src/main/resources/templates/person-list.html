@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/persons}">Person Management</a>
+            <div class="navbar-nav">
+                <a class="nav-link" th:href="@{/persons}">List Persons</a>
+                <a class="nav-link" th:href="@{/persons/new}">Add Person</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-4">
+        <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
+            <span th:text="${param.success}">Operation successful</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        
+        <div th:if="${param.error}" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <span th:text="${param.error}" class="me-1"></span>
+            <span>(already exists)</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Person List</h2>
+            <a th:href="@{/persons/new}" class="btn btn-primary" id="add-person-btn">
+                Add New Person
+            </a>
+        </div>
+        
+        <div th:if="${persons.empty}" class="alert alert-info" id="no-persons-message">
+            No persons found. <a th:href="@{/persons/new}">Add the first person</a>
+        </div>
+        
+        <div th:unless="${persons.empty}">
+            <table class="table table-striped table-hover" id="persons-table">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="person : ${persons}" th:id="'person-row-' + ${person.id}">
+                        <td th:text="${person.id}" class="person-id"></td>
+                        <td th:text="${person.name}" class="person-name"></td>
+                        <td th:text="${person.email}" class="person-email"></td>
+                        <td th:text="${person.age}" class="person-age"></td>
+                        <td>
+                            <a th:href="@{/persons/edit/{id}(id=${person.id})}"
+                               class="btn btn-sm btn-outline-primary edit-btn"
+                               th:id="'edit-btn-' + ${person.id}">
+                                Edit
+                            </a>
+                            <form th:action="@{/persons/delete/{id}(id=${person.id})}"
+                                  method="post" class="d-inline">
+                                <button type="submit"
+                                        class="btn btn-sm btn-outline-danger delete-btn"
+                                        th:id="'delete-btn-' + ${person.id}"
+                                        onclick="return confirm('Are you sure you want to delete this person?')">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

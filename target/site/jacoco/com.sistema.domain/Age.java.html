@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Age.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">crud-system</a> &gt; <a href="index.source.html" class="el_package">com.sistema.domain</a> &gt; <span class="el_source">Age.java</span></div><h1>Age.java</h1><pre class="source lang-java linenums">package com.sistema.domain;
+
+import com.sistema.exception.InvalidAgeException;
+
+public record Age(int value) {
+    private static final int MIN_AGE = 0;
+    private static final int MAX_AGE = 150;
+    
+<span class="fc" id="L9">    public Age {</span>
+<span class="fc bfc" id="L10" title="All 4 branches covered.">        if (value &lt; MIN_AGE || value &gt; MAX_AGE) {</span>
+<span class="fc" id="L11">            throw new InvalidAgeException(</span>
+                &quot;Age must be between &quot; + MIN_AGE + &quot; and &quot; + MAX_AGE
+            );
+        }
+<span class="fc" id="L15">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

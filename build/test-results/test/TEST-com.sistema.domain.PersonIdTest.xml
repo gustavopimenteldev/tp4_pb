@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sistema.domain.PersonIdTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-12-07T01:22:29.221Z" hostname="MAQUINA" time="0.007">
+  <properties/>
+  <testcase name="shouldThrowExceptionForZeroId()" classname="com.sistema.domain.PersonIdTest" time="0.001"/>
+  <testcase name="shouldCreateValidPersonId()" classname="com.sistema.domain.PersonIdTest" time="0.001"/>
+  <testcase name="shouldThrowExceptionForNegativeId()" classname="com.sistema.domain.PersonIdTest" time="0.001"/>
+  <testcase name="shouldAcceptMaxLongId()" classname="com.sistema.domain.PersonIdTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sistema.property.PersonPropertyTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-12-07T01:22:28.699Z" hostname="MAQUINA" time="0.397">
+  <properties/>
+  <testcase name="updatedPersonKeepsSameId" classname="com.sistema.property.PersonPropertyTest" time="0.319"/>
+  <testcase name="personCreatedCanAlwaysBeFound" classname="com.sistema.property.PersonPropertyTest" time="0.077"/>
+  <system-out><![CDATA[timestamp = 2025-12-06T22:22:29.021366200, PersonPropertyTest:updatedPersonKeepsSameId = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 1000       | # of all combined edge cases
+edge-cases#tried = 164        | # of edge cases tried in current run
+seed = 6098341989594624410    | random seed to reproduce generated values
+
+
+timestamp = 2025-12-06T22:22:29.098197200, PersonPropertyTest:personCreatedCanAlwaysBeFound = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 1000       | # of all combined edge cases
+edge-cases#tried = 153        | # of edge cases tried in current run
+seed = -6183129096173512707   | random seed to reproduce generated values
+
+
+]]></system-out>
+  <system-err><![CDATA[Dec 06, 2025 10:22:28 PM net.jqwik.engine.properties.RandomizedShrinkablesGenerator logEdgeCasesOutnumberTriesIfApplicable
+INFO: Edge case generation exceeds number of tries. Stopped after 1000 generated cases.
+Dec 06, 2025 10:22:29 PM net.jqwik.engine.properties.RandomizedShrinkablesGenerator logEdgeCasesOutnumberTriesIfApplicable
+INFO: Edge case generation exceeds number of tries. Stopped after 1000 generated cases.
+]]></system-err>
+</testsuite>

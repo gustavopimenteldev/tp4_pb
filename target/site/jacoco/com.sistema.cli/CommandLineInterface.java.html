@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommandLineInterface.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">crud-system</a> &gt; <a href="index.source.html" class="el_package">com.sistema.cli</a> &gt; <span class="el_source">CommandLineInterface.java</span></div><h1>CommandLineInterface.java</h1><pre class="source lang-java linenums">package com.sistema.cli;
+
+import com.sistema.domain.Age;
+import com.sistema.domain.Email;
+import com.sistema.domain.Person;
+import com.sistema.domain.PersonId;
+import com.sistema.service.PersonService;
+
+import java.util.Scanner;
+
+public class CommandLineInterface {
+    private final PersonService personService;
+    private final Scanner scanner;
+    private boolean running;
+    
+<span class="nc" id="L16">    public CommandLineInterface(PersonService personService) {</span>
+<span class="nc" id="L17">        this.personService = personService;</span>
+<span class="nc" id="L18">        this.scanner = new Scanner(System.in);</span>
+<span class="nc" id="L19">        this.running = true;</span>
+<span class="nc" id="L20">    }</span>
+    
+    public void start() {
+<span class="nc" id="L23">        System.out.println(&quot;=== Sistema CRUD de Pessoas ===&quot;);</span>
+        
+<span class="nc bnc" id="L25" title="All 2 branches missed.">        while (running) {</span>
+<span class="nc" id="L26">            showMenu();</span>
+<span class="nc" id="L27">            var option = readMenuOption();</span>
+<span class="nc" id="L28">            executeOption(option);</span>
+<span class="nc" id="L29">        }</span>
+        
+<span class="nc" id="L31">        scanner.close();</span>
+<span class="nc" id="L32">    }</span>
+    
+    private void showMenu() {
+<span class="nc" id="L35">        System.out.println(&quot;\nOpções:&quot;);</span>
+<span class="nc" id="L36">        System.out.println(&quot;1. Criar pessoa&quot;);</span>
+<span class="nc" id="L37">        System.out.println(&quot;2. Buscar pessoa&quot;);</span>
+<span class="nc" id="L38">        System.out.println(&quot;3. Listar todas as pessoas&quot;);</span>
+<span class="nc" id="L39">        System.out.println(&quot;4. Atualizar pessoa&quot;);</span>
+<span class="nc" id="L40">        System.out.println(&quot;5. Deletar pessoa&quot;);</span>
+<span class="nc" id="L41">        System.out.println(&quot;6. Sair&quot;);</span>
+<span class="nc" id="L42">        System.out.print(&quot;Escolha uma opção: &quot;);</span>
+<span class="nc" id="L43">    }</span>
+    
+    private MenuOption readMenuOption() {
+        try {
+<span class="nc" id="L47">            int choice = scanner.nextInt();</span>
+<span class="nc" id="L48">            scanner.nextLine();</span>
+            
+<span class="nc bnc" id="L50" title="All 7 branches missed.">            return switch (choice) {</span>
+<span class="nc" id="L51">                case 1 -&gt; MenuOption.CREATE;</span>
+<span class="nc" id="L52">                case 2 -&gt; MenuOption.READ;</span>
+<span class="nc" id="L53">                case 3 -&gt; MenuOption.READ_ALL;</span>
+<span class="nc" id="L54">                case 4 -&gt; MenuOption.UPDATE;</span>
+<span class="nc" id="L55">                case 5 -&gt; MenuOption.DELETE;</span>
+<span class="nc" id="L56">                case 6 -&gt; MenuOption.EXIT;</span>
+<span class="nc" id="L57">                default -&gt; throw new IllegalArgumentException(&quot;Opção inválida&quot;);</span>
+            };
+<span class="nc" id="L59">        } catch (Exception e) {</span>
+<span class="nc" id="L60">            scanner.nextLine();</span>
+<span class="nc" id="L61">            System.out.println(&quot;Opção inválida. Tente novamente.&quot;);</span>
+<span class="nc" id="L62">            return readMenuOption();</span>
+        }
+    }
+    
+    private void executeOption(MenuOption option) {
+        try {
+<span class="nc bnc" id="L68" title="All 7 branches missed.">            switch (option) {</span>
+<span class="nc" id="L69">                case CREATE -&gt; createPerson();</span>
+<span class="nc" id="L70">                case READ -&gt; readPerson();</span>
+<span class="nc" id="L71">                case READ_ALL -&gt; readAllPersons();</span>
+<span class="nc" id="L72">                case UPDATE -&gt; updatePerson();</span>
+<span class="nc" id="L73">                case DELETE -&gt; deletePerson();</span>
+                case EXIT -&gt; {
+<span class="nc" id="L75">                    running = false;</span>
+<span class="nc" id="L76">                    System.out.println(&quot;Saindo do sistema...&quot;);</span>
+                }
+            }
+<span class="nc" id="L79">        } catch (Exception e) {</span>
+<span class="nc" id="L80">            System.out.println(&quot;Erro: &quot; + e.getMessage());</span>
+<span class="nc" id="L81">        }</span>
+<span class="nc" id="L82">    }</span>
+    
+    private void createPerson() {
+<span class="nc" id="L85">        System.out.print(&quot;ID: &quot;);</span>
+<span class="nc" id="L86">        long id = scanner.nextLong();</span>
+<span class="nc" id="L87">        scanner.nextLine();</span>
+        
+<span class="nc" id="L89">        System.out.print(&quot;Nome: &quot;);</span>
+<span class="nc" id="L90">        String name = scanner.nextLine();</span>
+        
+<span class="nc" id="L92">        System.out.print(&quot;Email: &quot;);</span>
+<span class="nc" id="L93">        String email = scanner.nextLine();</span>
+        
+<span class="nc" id="L95">        System.out.print(&quot;Idade: &quot;);</span>
+<span class="nc" id="L96">        int age = scanner.nextInt();</span>
+<span class="nc" id="L97">        scanner.nextLine();</span>
+        
+<span class="nc" id="L99">        var person = new Person(</span>
+            new PersonId(id),
+            name,
+            new Email(email),
+            new Age(age)
+        );
+        
+<span class="nc" id="L106">        personService.createPerson(person);</span>
+<span class="nc" id="L107">        System.out.println(&quot;Pessoa criada com sucesso!&quot;);</span>
+<span class="nc" id="L108">    }</span>
+    
+    private void readPerson() {
+<span class="nc" id="L111">        System.out.print(&quot;Digite o ID: &quot;);</span>
+<span class="nc" id="L112">        long id = scanner.nextLong();</span>
+<span class="nc" id="L113">        scanner.nextLine();</span>
+        
+<span class="nc" id="L115">        var person = personService.findPersonById(new PersonId(id));</span>
+<span class="nc" id="L116">        printPerson(person);</span>
+<span class="nc" id="L117">    }</span>
+    
+    private void readAllPersons() {
+<span class="nc" id="L120">        var persons = personService.findAllPersons();</span>
+<span class="nc bnc" id="L121" title="All 2 branches missed.">        if (persons.isEmpty()) {</span>
+<span class="nc" id="L122">            System.out.println(&quot;Nenhuma pessoa encontrada.&quot;);</span>
+        } else {
+<span class="nc" id="L124">            persons.forEach(this::printPerson);</span>
+        }
+<span class="nc" id="L126">    }</span>
+    
+    private void updatePerson() {
+<span class="nc" id="L129">        System.out.print(&quot;Digite o ID da pessoa a ser atualizada: &quot;);</span>
+<span class="nc" id="L130">        long id = scanner.nextLong();</span>
+<span class="nc" id="L131">        scanner.nextLine();</span>
+        
+<span class="nc" id="L133">        var personId = new PersonId(id);</span>
+<span class="nc" id="L134">        var existingPerson = personService.findPersonById(personId);</span>
+        
+<span class="nc" id="L136">        System.out.print(&quot;Novo nome [&quot; + existingPerson.name() + &quot;]: &quot;);</span>
+<span class="nc" id="L137">        String name = scanner.nextLine();</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">        if (name.trim().isEmpty()) {</span>
+<span class="nc" id="L139">            name = existingPerson.name();</span>
+        }
+        
+<span class="nc" id="L142">        System.out.print(&quot;Novo email [&quot; + existingPerson.email().value() + &quot;]: &quot;);</span>
+<span class="nc" id="L143">        String email = scanner.nextLine();</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">        if (email.trim().isEmpty()) {</span>
+<span class="nc" id="L145">            email = existingPerson.email().value();</span>
+        }
+        
+<span class="nc" id="L148">        System.out.print(&quot;Nova idade [&quot; + existingPerson.age().value() + &quot;]: &quot;);</span>
+<span class="nc" id="L149">        String ageInput = scanner.nextLine();</span>
+<span class="nc bnc" id="L150" title="All 2 branches missed.">        int age = ageInput.trim().isEmpty() ? </span>
+<span class="nc" id="L151">            existingPerson.age().value() : Integer.parseInt(ageInput);</span>
+        
+<span class="nc" id="L153">        var updatedPerson = new Person(</span>
+            personId,
+            name,
+            new Email(email),
+            new Age(age)
+        );
+        
+<span class="nc" id="L160">        personService.updatePerson(updatedPerson);</span>
+<span class="nc" id="L161">        System.out.println(&quot;Pessoa atualizada com sucesso!&quot;);</span>
+<span class="nc" id="L162">    }</span>
+    
+    private void deletePerson() {
+<span class="nc" id="L165">        System.out.print(&quot;Digite o ID da pessoa a ser deletada: &quot;);</span>
+<span class="nc" id="L166">        long id = scanner.nextLong();</span>
+<span class="nc" id="L167">        scanner.nextLine();</span>
+        
+<span class="nc" id="L169">        personService.deletePersonById(new PersonId(id));</span>
+<span class="nc" id="L170">        System.out.println(&quot;Pessoa deletada com sucesso!&quot;);</span>
+<span class="nc" id="L171">    }</span>
+    
+    private void printPerson(Person person) {
+<span class="nc" id="L174">        System.out.println(&quot;ID: &quot; + person.id().value());</span>
+<span class="nc" id="L175">        System.out.println(&quot;Nome: &quot; + person.name());</span>
+<span class="nc" id="L176">        System.out.println(&quot;Email: &quot; + person.email().value());</span>
+<span class="nc" id="L177">        System.out.println(&quot;Idade: &quot; + person.age().value());</span>
+<span class="nc" id="L178">        System.out.println(&quot;---&quot;);</span>
+<span class="nc" id="L179">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

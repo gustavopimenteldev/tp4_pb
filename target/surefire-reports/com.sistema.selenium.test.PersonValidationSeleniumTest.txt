@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.sistema.selenium.test.PersonValidationSeleniumTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.94 s -- in com.sistema.selenium.test.PersonValidationSeleniumTest

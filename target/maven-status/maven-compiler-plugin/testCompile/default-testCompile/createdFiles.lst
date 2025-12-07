@@ -1,0 +1,13 @@
+com\sistema\selenium\config\SeleniumConfig.class
+com\sistema\selenium\page\PersonListPage.class
+com\sistema\domain\PersonTest.class
+com\sistema\selenium\page\HomePage.class
+com\sistema\selenium\config\SeleniumWebDriverFactory$BrowserType.class
+com\sistema\selenium\page\BasePage.class
+com\sistema\domain\EmailTest.class
+com\sistema\selenium\config\SeleniumConfig$SeleniumProperties.class
+com\sistema\selenium\page\PersonFormPage.class
+com\sistema\domain\AgeTest.class
+com\sistema\selenium\config\SeleniumWebDriverFactory.class
+com\sistema\service\PersonServiceTest.class
+com\sistema\property\PersonPropertyTest.class

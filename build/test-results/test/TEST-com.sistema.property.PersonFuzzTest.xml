@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sistema.property.PersonFuzzTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-12-07T01:22:28.178Z" hostname="MAQUINA" time="0.515">
+  <properties/>
+  <testcase name="serviceCreatePersonWithRandomDataDoesNotCrashUnexpectedly" classname="com.sistema.property.PersonFuzzTest" time="0.427"/>
+  <testcase name="ageHandlesArbitraryIntegersWithoutUnexpectedExceptions" classname="com.sistema.property.PersonFuzzTest" time="0.041"/>
+  <testcase name="emailHandlesArbitraryStringsWithoutUnexpectedExceptions" classname="com.sistema.property.PersonFuzzTest" time="0.045"/>
+  <system-out><![CDATA[timestamp = 2025-12-06T22:22:28.598743100, PersonFuzzTest:serviceCreatePersonWithRandomDataDoesNotCrashUnexpectedly = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 144        | # of all combined edge cases
+edge-cases#tried = 131        | # of edge cases tried in current run
+seed = -4393930406090868863   | random seed to reproduce generated values
+
+
+timestamp = 2025-12-06T22:22:28.649731300, PersonFuzzTest:ageHandlesArbitraryIntegersWithoutUnexpectedExceptions = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 9          | # of all combined edge cases
+edge-cases#tried = 9          | # of edge cases tried in current run
+seed = -1971227403765305955   | random seed to reproduce generated values
+
+
+timestamp = 2025-12-06T22:22:28.695901400, PersonFuzzTest:emailHandlesArbitraryStringsWithoutUnexpectedExceptions = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 4          | # of all combined edge cases
+edge-cases#tried = 4          | # of edge cases tried in current run
+seed = -747552119427511699    | random seed to reproduce generated values
+
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

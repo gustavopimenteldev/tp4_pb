@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sistema.domain.PersonTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-12-07T01:22:29.229Z" hostname="MAQUINA" time="0.014">
+  <properties/>
+  <testcase name="shouldCreateValidPerson()" classname="com.sistema.domain.PersonTest" time="0.0"/>
+  <testcase name="shouldThrowExceptionForNullId()" classname="com.sistema.domain.PersonTest" time="0.001"/>
+  <testcase name="shouldThrowExceptionForNullAge()" classname="com.sistema.domain.PersonTest" time="0.001"/>
+  <testcase name="shouldCreatePersonWithNewAge()" classname="com.sistema.domain.PersonTest" time="0.002"/>
+  <testcase name="shouldThrowExceptionForNullEmail()" classname="com.sistema.domain.PersonTest" time="0.001"/>
+  <testcase name="shouldThrowExceptionForNullName()" classname="com.sistema.domain.PersonTest" time="0.001"/>
+  <testcase name="shouldCreatePersonWithNewEmail()" classname="com.sistema.domain.PersonTest" time="0.001"/>
+  <testcase name="shouldThrowExceptionForEmptyName()" classname="com.sistema.domain.PersonTest" time="0.002"/>
+  <testcase name="shouldCreatePersonWithNewName()" classname="com.sistema.domain.PersonTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
