@@ -46,9 +46,6 @@ jobs:
               with:
                   firefox-version: latest
 
-            - name: Run tests (headless)
-              run: ./gradlew test -Dheadless=true
-
             # 4) Dar permissão de execução pro wrapper (garante no Linux)
             - name: Grant execute permission for gradlew
               run: chmod +x gradlew
